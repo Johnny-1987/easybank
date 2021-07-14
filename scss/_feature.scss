@@ -1,0 +1,43 @@
+.features {
+    background-color: $lightGrayishBlue;
+    padding: $container-p;
+}
+
+.feature__title {
+    width: 45%;   
+}
+
+.feature__item {
+    flex: 0 22%;
+
+    .feature__icon {
+        margin: 2.875rem 0;
+        width: initial;
+        height: initial;
+    }
+}
+
+@include breakpoint-down(medium) {
+    .features {
+        text-align: center;
+        padding: 3rem $container-p-sm-md;
+    }
+
+    .feature__title {
+        width: 100%;
+    }
+    .feature__grid {
+        flex-wrap: wrap;
+    }
+
+    .feature__item {
+        flex-basis: 45%;
+    }
+}
+
+@include breakpoint-down(small) {
+    .feature__grid {
+        flex-direction: column;
+        flex-basis: 100%;
+    }
+}

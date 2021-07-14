@@ -1,0 +1,91 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    list-style: none;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Public Sans', sans-serif;
+    font-weight: 300;
+    font-size: $font-sm;
+    line-height: 1.3;
+
+    &.no-scroll { // no scroll when show hamburger-menu
+        overflow: hidden;
+    }
+}
+
+// text
+h1,h2,h3 {
+    font-weight: 300;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.31rem;
+    color: $darkBlue;
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font-size: 2.25rem;
+    margin-bottom: 2.25rem;
+}
+
+p {
+    line-height: 1.5;
+    color: $grayishBlue;
+    // font-size: 1rem;
+    margin-bottom: 2.25rem;
+    
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+
+// flexbox
+
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-ai-c {
+        align-items: center;
+    }
+
+    // &-jc-c {
+    //     justify-content: center;
+    // }
+}
+
+// visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desctop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
+

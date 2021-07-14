@@ -1,0 +1,150 @@
+// header
+
+// show hamburger menu
+.hamburger-toggle {
+    
+    & span:first-child {
+            transform: translateY(7px)
+            rotate(45deg);
+        }
+
+    & span:nth-child(2) {
+        opacity: 0;
+    }
+
+    & span:last-child {
+        transform: translateY(-5px)
+        rotate(-45deg);
+    }
+}
+
+// hamburger menu
+.hamburger-menu {
+    display: none;
+    position: relative;
+    padding: 1.4375rem 0;
+    // margin: 1.4375rem;
+    margin: 3.4375rem;
+    background: $white;
+    border-radius: 5px;
+
+    & a {
+        display: block;        
+        padding: 0.615rem 0;
+        text-align: center;
+        color: $darkBlue;
+        text-transform: capitalize;
+        font-size: $font-med;       
+    }
+}
+
+.open-hamburger-menu {
+    display: block;
+
+    & > a:hover {
+        color: $white;
+        background: $grayishBlue;
+    }
+}
+
+.overlay {
+    visibility: hidden;
+    position: fixed;
+    top: 5.8125rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: linear-gradient($darkBlue, transparent);
+}
+
+// animation hamburger btn
+.fade-in {
+    visibility: visible;
+    animation: fade-in 300ms ease-in-out forwards;
+    
+    a:hover {
+        background: #333;
+
+    }
+}
+
+.fade-out {
+    visibility: hidden;
+    animation: fade-out 300ms ease-in-out forwards;
+}
+
+.nav {
+    padding: 1.4375rem 5.5rem;
+
+    @include breakpoint-down(medium) {
+        padding: $container-p-sm-md;
+    }
+
+    // & a {
+    //     transition: all 200ms ease-in-out;
+    // }
+}
+
+.nav__logo {
+      width: 8.8125rem;
+      height: 1.375rem;
+}
+
+.header__hamburger {
+    & > span {
+        display: block;
+        height: 1px;
+        width: 22px;
+        background: $darkBlue;
+        transition: all 300ms ease-in-out;
+    }
+
+    & span:not(:last-child) {
+        margin-bottom: 5px;
+    }
+}
+
+.nav__link {
+    & a {
+        transition: all 200ms ease-in-out;
+        position: relative;
+        font-size: $font-med;
+        text-transform: capitalize;
+        color: $grayishBlue; 
+    }
+
+    & a:not(:last-child) {
+        margin-right: 36px;
+    }
+
+    & a:hover {
+        color: $darkBlue;
+    }
+
+    & a:before {
+        position: absolute;
+        top: 52px;
+        content: '';
+        width: 0;
+        height: 5px;
+        background: linear-gradient(to left, $brightCyan, $limeGreen);
+        transition: all 200ms ease-in-out;
+    }
+    
+    & a:hover:before {
+        width: 100%;
+    }
+}
+
+.nav__button {
+    border-radius: 22px;
+    font-size: $font-med;
+    font-weight: 300;
+    color: $white;
+    padding: 0.78rem 2.14rem;
+    background: linear-gradient(to left, $brightCyan, $limeGreen);
+
+    &:hover {
+        background: linear-gradient(to left, rgba(43,183,218,0.7%), rgba(49,211,92,0.7%));
+    }
+}
